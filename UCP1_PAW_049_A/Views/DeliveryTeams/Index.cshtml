@@ -1,0 +1,42 @@
+﻿@model IEnumerable<UCP1_PAW_049_A.Models.DeliveryTeam>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Delivery Team</h1>
+
+<p>
+    <a asp-action="Create">Tambah Data Baru</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Pegawai")
+            </th>
+            <th>
+                @Html.DisplayName("Email")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameEmployee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeId"><i class="fa fa-marker fa-md"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.EmployeeId"><i class="fa fa-list"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId"><i class="fa fa-trash-alt fa-md"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

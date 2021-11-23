@@ -1,0 +1,36 @@
+﻿@model UCP1_PAW_049_A.Models.OrderProduct
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OrderProduct</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Kuantitas")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Harga Satuan")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceEach)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("ID Jalur Produksi")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdProductNavigation.IdProduct)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdOrderProduct">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

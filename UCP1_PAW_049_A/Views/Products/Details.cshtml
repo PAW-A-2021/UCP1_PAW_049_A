@@ -1,0 +1,66 @@
+﻿@model UCP1_PAW_049_A.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Nama Produk")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NameProduct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Skala")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Scale)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("ID Jalur Produksi")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductionlineId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Vendor")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vendor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Deskripsi Produk")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PdtDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Kuantitas Persediaan")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QtyInStock)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Harga Beli")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BuyPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("MSRP")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Msrp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdProduct">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

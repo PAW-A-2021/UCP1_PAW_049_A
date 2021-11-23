@@ -1,0 +1,75 @@
+﻿@model UCP1_PAW_049_A.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Buat</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdProduct" class="control-label">ID Produk</label>
+                <input asp-for="IdProduct" class="form-control" />
+                <span asp-validation-for="IdProduct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameProduct" class="control-label">Nama Produk</label>
+                <input asp-for="NameProduct" class="form-control" />
+                <span asp-validation-for="NameProduct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Scale" class="control-label">Skala</label>
+                <input asp-for="Scale" class="form-control" />
+                <span asp-validation-for="Scale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionlineId" class="control-label">ID Jalur Produksi</label>
+                <input asp-for="ProductionlineId" class="form-control" />
+                <span asp-validation-for="ProductionlineId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendor" class="control-label">Vendor</label>
+                <input asp-for="Vendor" class="form-control" />
+                <span asp-validation-for="Vendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PdtDescription" class="control-label">Deskripsi Produk</label>
+                <input asp-for="PdtDescription" class="form-control" />
+                <span asp-validation-for="PdtDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyInStock" class="control-label">Kuantitas Persediaan</label>
+                <input asp-for="QtyInStock" class="form-control" />
+                <span asp-validation-for="QtyInStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuyPrice" class="control-label">Harga Beli</label>
+                <input asp-for="BuyPrice" class="form-control" />
+                <span asp-validation-for="BuyPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Msrp" class="control-label">MSRP</label>
+                <br />
+                <label>*Harga Eceran yang disarankan</label>
+                <input asp-for="Msrp" class="form-control" />
+                <span asp-validation-for="Msrp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

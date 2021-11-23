@@ -1,0 +1,39 @@
+﻿@model UCP1_PAW_049_A.Models.Customer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Hapus</h1>
+
+<h3>Apakah Anda yakin ingin menghapus ini?</h3>
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Nama Pelanggan")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NamaCustomer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Alamat")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Batas Kredit")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreditLimit)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCustomer" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

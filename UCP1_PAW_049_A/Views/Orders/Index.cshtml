@@ -1,0 +1,62 @@
+﻿@model IEnumerable<UCP1_PAW_049_A.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Pesan</h1>
+
+<p>
+    <a asp-action="Create">Tambah Data Baru</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Tanggal Pesan")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal Wajib")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal Pengiriman")
+            </th>
+            <th>
+                @Html.DisplayName("Komentar")
+            </th>
+            <th>
+                @Html.DisplayName("Status")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdOrderProductNavigation.IdOrderProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdStatusNavigation.Status1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdOrder"><i class="fa fa-marker fa-md"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdOrder"><i class="fa fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdOrder"><i class="fa fa-trash-alt fa-md"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

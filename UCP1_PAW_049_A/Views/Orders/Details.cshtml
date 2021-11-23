@@ -1,0 +1,54 @@
+﻿@model UCP1_PAW_049_A.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pesan</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Pesan")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Wajib")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequiredDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Pengiriman")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShippedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Komentar")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("ID Produk Pesan")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdOrderProductNavigation.IdOrderProduct)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Status")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdStatusNavigation.Status1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdOrder">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

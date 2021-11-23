@@ -1,0 +1,72 @@
+﻿@model IEnumerable<UCP1_PAW_049_A.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produk</h1>
+
+<p>
+    <a asp-action="Create">Tambah Data Baru</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Produk")
+            </th>
+            <th>
+                @Html.DisplayName("Skala")
+            </th>
+            <th>
+                @Html.DisplayName("Vendor")
+            </th>
+            <th>
+                @Html.DisplayName("Deskripsi Produk")
+            </th>
+            <th>
+                @Html.DisplayName("Kuantitas Persediaan")
+            </th>
+            <th>
+                @Html.DisplayName("Harga Beli")
+            </th>
+            <th>
+                @Html.DisplayName("MSRP")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameProduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PdtDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyInStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuyPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Msrp)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdProduct"><i class="fa fa-marker fa-md"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.IdProduct"><i class="fa fa-list"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdProduct"><i class="fa fa-trash-alt fa-md"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
